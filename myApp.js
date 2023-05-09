@@ -1,5 +1,7 @@
+const mongoose = require('mongoose');
 require('dotenv').config();
 
+mongoose.connect(process.env.MONGO_URI);
 
 let Person;
 
@@ -50,6 +52,8 @@ const queryChain = (done) => {
 
   done(null /*, data*/);
 };
+
+
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
