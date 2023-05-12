@@ -23,7 +23,7 @@ const createAndSavePerson = (done) => {
 
   })
   person.save()
-	.then((doc) => {console.log(doc);})
+	.then((doc) => {done(null, doc);})
   .catch((err) => {
 
 	console.error(err)
