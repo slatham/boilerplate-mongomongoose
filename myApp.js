@@ -3,6 +3,10 @@ require('dotenv').config();
 
 mongoose.connect(process.env.MONGO_URI);
 
+arrayOfPeople = [{name:"STe", age:22, favoriteFoods:["Bacon", "Eggs"]},{name: "Sid", age:44, favoriteFoods:["Sausage", "Mince"]}];
+
+
+
 let personSchema = new mongoose.Schema ({
 
 	name: {type: String, required: true},
@@ -32,7 +36,17 @@ const createAndSavePerson = (done) => {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+
+
+ Person.create(arrayOfPeople, function (err, data) {
+
+	if(err) return console.log(err);
+	done(null, data);
+
+
+})
+
+
 };
 
 const findPeopleByName = (personName, done) => {
@@ -74,6 +88,8 @@ const queryChain = (done) => {
 
   done(null /*, data*/);
 };
+
+
 
 
 /** **Well Done !!**
