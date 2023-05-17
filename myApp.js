@@ -97,13 +97,6 @@ const queryChain = (done) => {
 
 
 
-findPeopleByName("STe", function(err, data) {
-
-
-	console.dir(data)
-
-})
-
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
  */
