@@ -101,8 +101,10 @@ const findEditThenSave = (personId, done) => {
 	} else {
 		
 		data.favoriteFoods.push(foodToAdd)
-		data.save()
-		done(null, data)
+		data.save((err, updatePerson) => {
+			done(null, updatePerson)
+
+		})
 	}
 
 })
